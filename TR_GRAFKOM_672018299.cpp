@@ -56,7 +56,7 @@ void persegi(void)
     glEnd();
 
 }
-void tampilan(void)
+void Tampilan(void)
  {
      glClearColor(t+=0.9f,0.5f,0.9f, 1.0f);//membuat ganti warna
      glClear(GL_COLOR_BUFFER_BIT);
@@ -71,7 +71,7 @@ void timer(int z)
     glutTimerFunc(1500,timer,0);
 }
 
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitWindowSize(1100,1200);
