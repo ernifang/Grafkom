@@ -55,7 +55,7 @@ void persegi(void)
     glEnd();
 
 }
-void myDisplay(void)
+void tampilan(void)
  {
      glClearColor(t+=0.9f,0.5f,0.9f, 1.0f);//membuat ganti warna
      glClear(GL_COLOR_BUFFER_BIT);
@@ -73,7 +73,7 @@ void timer(int z)
 int main(int argc, char *argv)
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(1000,800);
+    glutInitWindowSize(1100,1200);
     glutInitWindowPosition(100,100);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutCreateWindow("TR_GRAFKOM_672018299");
