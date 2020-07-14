@@ -1,8 +1,7 @@
 #include<cmath>
 #include<math.h>
 #include<windows.h>
-#include<GL/glew.h>
-#include<GL/freeglut.h>
+#include <gl/glut.h>
 #include<iostream>
 
 void init (void);
@@ -14,7 +13,7 @@ void ukuran(int, int);
 void mouseMotion(int x, int y);
 
 
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
 	glutInit(argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
