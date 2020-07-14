@@ -1,14 +1,12 @@
 #include<cmath>
 #include<math.h>
 #include<windows.h>
-<<<<<<< HEAD
 #include<gl/Gl.h>
 #include<glut.h>
-=======
 #include<gl/glut.h>
->>>>>>> c67b0ce... tambahan
 #include<iostream>
 #define M_PHI 3.14
+
 int t = 0;
 int u = 0;
 int v = 0;
@@ -45,8 +43,6 @@ void tujuh(void)
     ngon(0,0,150,7);
     glPopMatrix();
     glEnd();
-
-<<<<<<< HEAD
 }
 
 void persegi(void)
@@ -262,5 +258,4 @@ void mouseMotion(int x, int y)
 
         glutPostRedisplay();
     }
->>>>>>> c67b0ce... tambahan
 }
