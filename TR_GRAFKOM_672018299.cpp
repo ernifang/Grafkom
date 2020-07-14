@@ -1,13 +1,12 @@
 #include<cmath>
 #include<math.h>
 #include<windows.h>
-#include<gl/Gl.h>
-#include<glut.h>
 #include<gl/glut.h>
+#include<gl/Gl.h>
 #include<iostream>
 #define M_PHI 3.14
 
-int t = 0;
+/*int t = 0;
 int u = 0;
 int v = 0;
 int i = 0;
@@ -24,6 +23,7 @@ void ngon(int xp, int yp, int r, int n){
         }
     glEnd();
 }
+
 void lingkaran(void){
 glPushMatrix();
     glRotatef(t+=150.0f,0.0f,0.0f,1.0f);
@@ -34,7 +34,8 @@ glPushMatrix();
     glPopMatrix();
     glEnd();
 }
-void tujuh(void)
+
+/*void tujuh(void)
 {
     glPushMatrix();
     glRotatef(u-=130.0f,0.0f,0.0f,1.0f);
@@ -55,48 +56,19 @@ void persegi(void)
     glPopMatrix();
     glEnd();
 
+ glutSwapBuffers();
 }
-void tampilan(void)
- {
-     glClearColor(t+=0.9f,0.5f,0.9f, 1.0f);//membuat ganti warna
-     glClear(GL_COLOR_BUFFER_BIT);
-     lingkaran();
-     tujuh();
-     persegi();
-    glutSwapBuffers();
- }
+
 void timer(int z)
 {
     glutPostRedisplay();
     glutTimerFunc(1500,timer,0);
-}
+}*/
 
-int main(int argc, char *argv)
-{
-    glutInit(&argc, argv);
-    glutInitWindowSize(1100,1200);
-    glutInitWindowPosition(100,100);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutCreateWindow("TR_GRAFKOM_672018299");
-    gluOrtho2D(-500,500,-400,400);
-    glutDisplayFunc(Tampilan);
-    glutTimerFunc(1500,timer,0);
-    glutMainLoop();
-    return 0;
-=======
 void init (void);
 void tampil (void);
 void keyboard(unsigned char, int, int);
 void ukuran(int, int);
-void mouse (int button, int state, int x, int y);
-void ukuran(int, int);
-void mouseMotion(int x, int y);
-
-float xrot= 0.0f;
-float yrot = 0.0f;
-float xdiff = 0.0f;
-float ydiff= 0.0f;
-bool mouseDown= false;
 
 int is_depth;
 
@@ -105,53 +77,151 @@ int main (int argc, char **argv)
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(1200,1100);
-    glutInitWindowPosition(250, 80);
-    glutCreateWindow("MALL 3D");
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("TR_GRAFKOM - 672108299");
     init();
     glutDisplayFunc(tampil);
     glutKeyboardFunc(keyboard);
     glutReshapeFunc(ukuran);
-    glutMouseFunc(mouse);
-    glutMotionFunc(mouseMotion);
-    glutIdleFunc(tampil);
     glutMainLoop();
     return 0;
 }
 
 void init(void)
 {
-    glClearColor(0.0,0.9,1.0,0.0);
+    glClearColor(0.0,0.5,1.0,1.0);
     glMatrixMode(GL_PROJECTION);
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHT0);
     is_depth=1;
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     glMatrixMode(GL_MODELVIEW);
-    glPointSize(13.0);
-    glLineWidth(3.0f);
+    glPointSize(9.0);
+    glLineWidth(6.0f);
 }
 
-void bangun1(){
+void halaman(){
+
+    //alas
+    glBegin(GL_QUADS);
+    glColor3f(0.5,0.5,0.5);
+    glVertex3f(-50.0,-40.1, 30.0);
+    glVertex3f(-50.0, -40.1, -100.0);
+    glVertex3f(50.0, -40.1, -100.0);
+    glVertex3f(50.0, -40.1, 30.0);
+    glEnd();
+
+}
+void bangun3 ()
+{
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(-20.0, -40.0,10.0);
+    glVertex3f(-20.0, -10.0, 10.0);
+    glVertex3f(20.0, -10.0,10.0);
+    glVertex3f(20.0, -40.0, 10.0);
+    glEnd();
+
+    //belakang 1
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(0.0, -40.0, -30.0);
+    glVertex3f(0.0, -10.0, -30.0);
+    glVertex3f(25.0, -10.0, -30.0);
+    glVertex3f(25.0, -40.0, -30.0);
+    glEnd();
+
+    //kanan melengkung
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(20.0, -40.0,10.0);
+    glVertex3f(20.0, -10.0, 10.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glVertex3f(25.0, -40.0, -5.0);
+    glEnd();
+
+    //kiri melengkung
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(-20.0, -40.0,10.0);
+    glVertex3f(-20.0, -10.0, 10.0);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(-28.0, -40.0, -5.0);
+    glEnd();
+
+    //kanan datar
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(25.0, -40.0,-5.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glVertex3f(25.0, -10.0, -30.0);
+    glVertex3f(25.0, -40.0, -30.0);
+    glEnd();
+
+     //kanan datar belakang
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(0.0, -40.0,-30.0);
+    glVertex3f(0.0, -10.0, -30.0);
+    glVertex3f(0.0, -10.0, -80.0);
+    glVertex3f(0.0, -40.0, -80.0);
+    glEnd();
+
+     //kiri datar
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.9,0.7);
+    glVertex3f(-28.0, -40.0,-5.0);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(-28.0, -10.0, -70.0);
+    glVertex3f(-28.0, -40.0, -70.0);
+    glEnd();
+
+     //belakang
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 0.9,0.7);
+    glVertex3f(-28.0, -40.0,-70.0);
+    glVertex3f(-28.0, -10.0, -70.0);
+    glVertex3f(0.0, -10.0, -80.0);
+    glVertex3f(0.0, -40.0, -80.0);
+    glEnd();
+
+    //atas
+    glBegin(GL_QUADS);
+    glColor3f(0.3,0.2,0.2);
+    glVertex3f(-20.0, -10.0,10.0);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glVertex3f(20.0, -10.0, 10.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.3,0.2,0.2);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(-28.0, -10.0, -30.0);
+    glVertex3f(25.0, -10.0, -30.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.3,0.2,0.2);
+    glVertex3f(-28.0, -10.0, -30.0);
+    glVertex3f(-28.0, -10.0, -70.0);
+    glVertex3f(0.0, -10.0, -80.0);
+    glVertex3f(0.0, -10.0, -30.0);
+    glEnd();
 
 
 }
 
 void tampil(void)
 {
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glLoadIdentity();
-    gluLookAt(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-    glRotatef(xrot, 1.0f, 0.0f, 0.0f);
-    glRotatef(yrot, 0.0f, 1.0f, 0.0f);
-
     if (is_depth)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     else
     glClear(GL_COLOR_BUFFER_BIT);
 
+
+    halaman();
+    bangun3();
     glPushMatrix();
     glPopMatrix();
 
@@ -225,37 +295,4 @@ void ukuran(int lebar, int tinggi)
     gluPerspective(50.0, lebar /tinggi, 5.0, 500.0);
     glTranslatef(0.0, -5.0, -150.0);
     glMatrixMode(GL_MODELVIEW);
-}
-
-void idle ()    //totasi otomatis
-{
-    if (!mouseDown)
-    {
-        xrot += 0.3f;
-        yrot += 0.4f;
-    }
-    glutPostRedisplay();
-}
-
-void mouse (int button, int state, int x, int y)
-{
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-    {
-       mouseDown = true;
-       xdiff = x- yrot;
-       ydiff = -y +xrot;
-    }
-    else
-        mouseDown = false;
-}
-
-void mouseMotion(int x, int y)
-{
-    if (mouseDown)
-    {
-        yrot = x - xdiff;
-        xrot = y + ydiff;
-
-        glutPostRedisplay();
-    }
 }
