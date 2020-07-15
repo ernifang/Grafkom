@@ -253,6 +253,122 @@ void bangun1(void)
     glVertex3f(2.0, 6.0, 0.0);
     glEnd();
 }
+
+void jendela(void)
+{
+//jendela
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.6,0.6);
+    glVertex3f(-2.0, -9.0,10.5);
+    glVertex3f(-2.0, 3.0, 10.5);
+    glVertex3f(0.0, 3.0,10.5);
+    glVertex3f(0.0, -9.0, 10.5);
+    glEnd();
+}
+void jendela1(void)
+{
+    glColor3f(0.0,0.0,1.0);
+    glPushMatrix();
+    jendela();
+    glTranslated(0,0,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(4,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(4,13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(0,-13,0);
+    jendela();
+    glTranslated(20,-13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(0,13,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(-4,0,0);
+    jendela();
+    glTranslated(4,-13,0);
+    jendela();
+    glTranslated(-4,-13,0);
+    jendela();
+    glTranslated(4,0,0);
+    jendela();
+    glTranslated(-4,13,0);
+    jendela();
+
+     glPopMatrix();
+}
 void bangun2(void)
 {
     //depan atas
@@ -403,6 +519,7 @@ void tampil(void)
     glRotatef(yrot,0.0f,1.0f,0.0f);
     halaman();
     bangun1();
+    jendela1();
     bangun2();
     bangun3();
     glPushMatrix();
