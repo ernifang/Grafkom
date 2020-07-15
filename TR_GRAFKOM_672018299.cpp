@@ -166,7 +166,7 @@ void bangun3 ()
 }
 void bangun1(void)
 {
-    //depan
+//depan
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(-20.0, 60.0,10.0);
@@ -175,7 +175,7 @@ void bangun1(void)
     glVertex3f(20.0, 60.0, 10.0);
     glEnd();
 
-    //belakang 1
+//belakang 1
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(0.0, 60.0, -30.0);
@@ -184,7 +184,7 @@ void bangun1(void)
     glVertex3f(25.0, 60.0, -30.0);
     glEnd();
 
-    //kanan melengkung
+//kanan melengkung
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(20.0, 60.0,10.0);
@@ -193,7 +193,7 @@ void bangun1(void)
     glVertex3f(25.0, 60.0, -5.0);
     glEnd();
 
-    //kiri melengkung
+//kiri melengkung
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(-20.0, 60.0,10.0);
@@ -202,7 +202,7 @@ void bangun1(void)
     glVertex3f(-28.0, 60.0, -5.0);
     glEnd();
 
-    //kanan datar
+//kanan datar
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(25.0, 60.0,-5.0);
@@ -211,7 +211,7 @@ void bangun1(void)
     glVertex3f(25.0, 60.0, -30.0);
     glEnd();
 
-     //kanan datar belakang
+//kanan datar belakang
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(0.0, 60.0,-30.0);
@@ -220,7 +220,7 @@ void bangun1(void)
     glVertex3f(-28.0, 60.0, -30.0);
     glEnd();
 
-     //kiri datar
+//kiri datar
     glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(-28.0, 60.0,-5.0);
@@ -228,7 +228,7 @@ void bangun1(void)
     glVertex3f(-28.0, -10.0, -30.0);
     glVertex3f(-28.0, 60.0, -30.0);
     glEnd();
-    //atas
+//atas
      glBegin(GL_QUADS);
     glColor3f(0.6,0.6,0.6);
     glVertex3f(-20.0, 60.0,10.0);
@@ -243,6 +243,14 @@ void bangun1(void)
     glVertex3f(-28.0, 60.0, -30.0);
     glVertex3f(25.0, 60.0, -30.0);
     glVertex3f(25.0, 60.0, -5.0);
+    glEnd();
+//jendela
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.6,0.6);
+    glVertex3f(-2.0, 6.0,0.0);
+    glVertex3f(-2.0, -1.0, 0.0);
+    glVertex3f(2.0, -1.0,0.0);
+    glVertex3f(2.0, 6.0, 0.0);
     glEnd();
 }
 void tampil(void)
