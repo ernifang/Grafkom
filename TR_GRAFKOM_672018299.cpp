@@ -5,12 +5,18 @@
 #include<gl/Gl.h>
 #include<iostream>
 #define M_PHI 3.14
-
-
-void init (void);
-void tampil (void);
-void keyboard(unsigned char, int, int);
-void ukuran(int, int);
+void init(void);
+void tampil(void);
+void keyboard(unsigned char,int,int);
+void ukuran(int,int);
+void mouse(int button,int state,int x,int y);
+void mouseMotion(int x,int y);
+float xrot = 0.0f;
+float yrot = 0.0f;
+float xdiff = 0.0f;
+float ydiff = 0.0f;
+double opintu=0;
+bool mouseDown =false;
 
 int is_depth;
 
@@ -25,6 +31,8 @@ int main (int argc, char **argv)
     glutDisplayFunc(tampil);
     glutKeyboardFunc(keyboard);
     glutReshapeFunc(ukuran);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
     glutMainLoop();
     return 0;
 }
@@ -33,6 +41,9 @@ void init(void)
 {
     glClearColor(0.0,0.5,1.0,1.0);
     glMatrixMode(GL_PROJECTION);
+    glEnable(GL_LIGHTING);
+glEnable(GL_COLOR_MATERIAL);
+glEnable(GL_LIGHT0);
     glEnable(GL_DEPTH_TEST);
     is_depth=1;
     glMatrixMode(GL_MODELVIEW);
@@ -153,16 +164,99 @@ void bangun3 ()
 
 
 }
+void bangun1(void)
+{
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(-20.0, 60.0,10.0);
+    glVertex3f(-20.0, -10.0, 10.0);
+    glVertex3f(20.0, -10.0,10.0);
+    glVertex3f(20.0, 60.0, 10.0);
+    glEnd();
 
+    //belakang 1
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(0.0, 60.0, -30.0);
+    glVertex3f(0.0, -10.0, -30.0);
+    glVertex3f(25.0, -10.0, -30.0);
+    glVertex3f(25.0, 60.0, -30.0);
+    glEnd();
+
+    //kanan melengkung
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(20.0, 60.0,10.0);
+    glVertex3f(20.0, -10.0, 10.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glVertex3f(25.0, 60.0, -5.0);
+    glEnd();
+
+    //kiri melengkung
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(-20.0, 60.0,10.0);
+    glVertex3f(-20.0, -10.0, 10.0);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(-28.0, 60.0, -5.0);
+    glEnd();
+
+    //kanan datar
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(25.0, 60.0,-5.0);
+    glVertex3f(25.0, -10.0, -5.0);
+    glVertex3f(25.0, -10.0, -30.0);
+    glVertex3f(25.0, 60.0, -30.0);
+    glEnd();
+
+     //kanan datar belakang
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(0.0, 60.0,-30.0);
+    glVertex3f(0.0, -10.0, -30.0);
+    glVertex3f(-28.0, -10.0, -30.0);
+    glVertex3f(-28.0, 60.0, -30.0);
+    glEnd();
+
+     //kiri datar
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(-28.0, 60.0,-5.0);
+    glVertex3f(-28.0, -10.0, -5.0);
+    glVertex3f(-28.0, -10.0, -30.0);
+    glVertex3f(-28.0, 60.0, -30.0);
+    glEnd();
+    //atas
+     glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(-20.0, 60.0,10.0);
+    glVertex3f(-28.0, 60.0, -5.0);
+    glVertex3f(25.0, 60.0, -5.0);
+    glVertex3f(20.0, 60.0, 10.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.6,0.6,0.6);
+    glVertex3f(-28.0, 60.0, -5.0);
+    glVertex3f(-28.0, 60.0, -30.0);
+    glVertex3f(25.0, 60.0, -30.0);
+    glVertex3f(25.0, 60.0, -5.0);
+    glEnd();
+}
 void tampil(void)
 {
     if (is_depth)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     else
     glClear(GL_COLOR_BUFFER_BIT);
-
-
+     glLoadIdentity();
+    gluLookAt(0.0f,0.0f,3.0f,0.0f,0.0f,0.0f,0.0f,1.0f,0.0f);
+    glRotatef(xrot,1.0f,0.0f,0.0f);
+    glRotatef(yrot,0.0f,1.0f,0.0f);
     halaman();
+    bangun1();
     bangun3();
     glPushMatrix();
     glPopMatrix();
@@ -229,12 +323,45 @@ void keyboard(unsigned char key, int x, int y)
     tampil();
 }
 
-void ukuran(int lebar, int tinggi)
+void idle()
 {
-    if (tinggi== 0) tinggi =1;
+  if (!mouseDown)
+  {
+      xrot +=0.3f;
+      yrot +=0.4f;
+  }
+   glutPostRedisplay();
+}
+
+void mouse(int button,int state,int x,int y)
+{
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+    {
+        mouseDown = true;
+        xdiff = x-yrot;
+        ydiff = -y+xrot;
+    }
+    else
+        mouseDown = false;
+}
+
+void mouseMotion(int x,int y)
+{
+    if (mouseDown)
+    {
+        yrot = x-xdiff;
+        xrot = y+ydiff;
+
+        glutPostRedisplay();
+    }
+}
+
+void ukuran(int lebar,int tinggi)
+{
+    if(tinggi==0) tinggi=1;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(50.0, lebar /tinggi, 5.0, 500.0);
-    glTranslatef(0.0, -5.0, -150.0);
+    gluPerspective(50.0,lebar / tinggi, 5.0,500.0);
+    glTranslated(0.0,-5.0,-150.0);
     glMatrixMode(GL_MODELVIEW);
 }
