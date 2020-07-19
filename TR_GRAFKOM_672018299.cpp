@@ -62,6 +62,87 @@ void halaman(){
     glVertex3f(50.0, -40.1, 30.0);
     glEnd();
 
+    glBegin(GL_QUADS);
+    glColor3f(0.5,0.5,0.5);
+    glVertex3f(-50.0,-45.1, 30.0);
+    glVertex3f(-50.0, -45.1, -100.0);
+    glVertex3f(50.0, -45.1, -100.0);
+    glVertex3f(50.0, -45.1, 30.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.5,0.5,0.5);
+    glVertex3f(-50.0,-40.1, 30.0);
+    glVertex3f(-50.0, -45.1, 30.0);
+    glVertex3f(50.0, -45.1, 30.0);
+    glVertex3f(50.0, -40.1, 30.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.5,0.5,0.5);
+    glVertex3f(50.0,-40.1, -100.0);
+    glVertex3f(50.0, -45.1, -100.0);
+    glVertex3f(50.0, -45.1, -100.0);
+    glVertex3f(50.0, -40.1, -10.0);
+    glEnd();
+
+    //jalan
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(-50.0, -40.1, 10.0);
+    glVertex3f(-50.0, -40.1, 12.0);
+    glVertex3f(50.0, -40.1,   12.0);
+    glVertex3f(50.0, -40.1, 10.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(-50.0, -40.1, 30.0);
+    glVertex3f(-50.0, -40.1, 28.0);
+    glVertex3f(50.0, -40.1,   28.0);
+    glVertex3f(50.0, -40.1, 30.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(-40.0, -40.1, 18.0);
+    glVertex3f(-40.0, -40.1, 20.0);
+    glVertex3f(-30.0, -40.1,   20.0);
+    glVertex3f(-30.0, -40.1, 18.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(-25.0, -40.1, 18.0);
+    glVertex3f(-25.0, -40.1, 20.0);
+    glVertex3f(-15.0, -40.1,   20.0);
+    glVertex3f(-15.0, -40.1, 18.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(-10.0, -40.1, 18.0);
+    glVertex3f(-10.0, -40.1, 20.0);
+    glVertex3f(0.0, -40.1,   20.0);
+    glVertex3f(0.0, -40.1, 18.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(10.0, -40.1, 18.0);
+    glVertex3f(10.0, -40.1, 20.0);
+    glVertex3f(20.0, -40.1,   20.0);
+    glVertex3f(20.0, -40.1, 18.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1,1,1);
+    glVertex3f(25.0, -40.1, 18.0);
+    glVertex3f(25.0, -40.1, 20.0);
+    glVertex3f(35.0, -40.1,   20.0);
+    glVertex3f(35.0, -40.1, 18.0);
+    glEnd();
+
 }
 void bangun3 ()
 {
