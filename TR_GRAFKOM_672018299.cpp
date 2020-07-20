@@ -1583,6 +1583,192 @@ void jembatan (){
 
 }
 
+void lampu(){
+     //tiang listrik
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+    //tiang listrik 1
+    glVertex3f(-30.0, -40.0,35.0);
+    glVertex3f(-30.0, -30.0, 35.0);
+    glVertex3f(-29.5, -30.0, 35.0);
+    glVertex3f(-29.5, -40.0, 35.0);
+
+    glVertex3f(-30.0, -40.0,35.5);
+    glVertex3f(-30.0, -30.0, 35.5);
+    glVertex3f(-29.5, -30.0, 35.5);
+    glVertex3f(-29.5, -40.0, 35.5);
+
+    glVertex3f(-30.0, -40.0,35.0);
+    glVertex3f(-30.0, -30.0, 35.0);
+    glVertex3f(-30.0, -30.0, 35.5);
+    glVertex3f(-30.0, -40.0, 35.5);
+
+    glVertex3f(-29.5, -40.0,35.0);
+    glVertex3f(-29.5, -30.0, 35.0);
+    glVertex3f(-29.5, -30.0, 35.5);
+    glVertex3f(-29.5, -40.0, 35.5);
+
+    //tiang listrik 2
+    glVertex3f(0.0, -40.0,35.0);
+    glVertex3f(0.0, -30.0, 35.0);
+    glVertex3f(0.5, -30.0, 35.0);
+    glVertex3f(0.5, -40.0, 35.0);
+
+    glVertex3f(0.0, -40.0,35.5);
+    glVertex3f(0.0, -30.0, 35.5);
+    glVertex3f(0.5, -30.0, 35.5);
+    glVertex3f(0.5, -40.0, 35.5);
+
+    glVertex3f(0.0, -40.0,35.0);
+    glVertex3f(0.0, -30.0, 35.0);
+    glVertex3f(0.0, -30.0, 35.5);
+    glVertex3f(0.0, -40.0, 35.5);
+
+    glVertex3f(0.5, -40.0,35.0);
+    glVertex3f(0.5, -30.0, 35.0);
+    glVertex3f(0.5, -30.0, 35.5);
+    glVertex3f(0.5, -40.0, 35.5);
+
+    //tiang listrik 3
+    glVertex3f(30.0, -40.0,35.0);
+    glVertex3f(30.0, -30.0, 35.0);
+    glVertex3f(30.5, -30.0, 35.0);
+    glVertex3f(30.5, -40.0, 35.0);
+
+    glVertex3f(30.0, -40.0,35.5);
+    glVertex3f(30.0, -30.0, 35.5);
+    glVertex3f(30.5, -30.0, 35.5);
+    glVertex3f(30.5, -40.0, 35.5);
+
+    glVertex3f(30.0, -40.0,35.0);
+    glVertex3f(30.0, -30.0, 35.0);
+    glVertex3f(30.0, -30.0, 35.5);
+    glVertex3f(30.0, -40.0, 35.5);
+
+    glVertex3f(30.5, -40.0,35.0);
+    glVertex3f(30.5, -30.0, 35.0);
+    glVertex3f(30.5, -30.0, 35.5);
+    glVertex3f(30.5, -40.0, 35.5);
+
+    //tiang listrik 4
+    glVertex3f(49.5, -40.0,35.0);
+    glVertex3f(49.5, -30.0, 35.0);
+    glVertex3f(50.0, -30.0, 35.0);
+    glVertex3f(50.0, -40.0, 35.0);
+
+    glVertex3f(50.0, -40.0,35.5);
+    glVertex3f(50.0, -30.0, 35.5);
+    glVertex3f(50.0, -30.0, 35.5);
+    glVertex3f(50.0, -40.0, 35.5);
+
+    glVertex3f(49.5, -40.0,35.0);
+    glVertex3f(49.5, -30.0, 35.0);
+    glVertex3f(50.0, -30.0, 35.5);
+    glVertex3f(50.0, -40.0, 35.5);
+
+    glVertex3f(49.5, -40.0,35.0);
+    glVertex3f(49.5, -30.0, 35.0);
+    glVertex3f(49.5, -30.0, 35.5);
+    glVertex3f(49.5, -40.0, 35.5);
+    glEnd();
+
+    //kabel listrik
+    glBegin(GL_LINES);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-30, -31.5, 35.0);
+    glVertex3f(50, -31.5, 35.0);
+    glEnd();
+
+    //lampu
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 0.0);
+    //lampu 1
+    glVertex3f(-30.0, -29.0,35.0);
+    glVertex3f(-30.0, -30.0, 35.0);
+    glVertex3f(-29.5, -30.0, 35.0);
+    glVertex3f(-29.5, -29.0, 35.0);
+
+    glVertex3f(-30.0, -29.0,35.5);
+    glVertex3f(-30.0, -30.0, 35.5);
+    glVertex3f(-29.5, -30.0, 35.5);
+    glVertex3f(-29.5, -29.0, 35.5);
+
+    glVertex3f(-30.0, -29.0,35.0);
+    glVertex3f(-30.0, -30.0, 35.0);
+    glVertex3f(-30.0, -30.0, 35.5);
+    glVertex3f(-30.0, -29.0, 35.5);
+
+    glVertex3f(-29.5, -29.0,35.0);
+    glVertex3f(-29.5, -30.0, 35.0);
+    glVertex3f(-29.5, -30.0, 35.5);
+    glVertex3f(-29.5, -29.0, 35.5);
+
+    //lampu 2
+    glVertex3f(0.0, -29.0,35.0);
+    glVertex3f(0.0, -30.0, 35.0);
+    glVertex3f(0.5, -30.0, 35.0);
+    glVertex3f(0.5, -29.0, 35.0);
+
+    glVertex3f(0.0, -29.0,35.5);
+    glVertex3f(0.0, -30.0, 35.5);
+    glVertex3f(0.5, -30.0, 35.5);
+    glVertex3f(0.5, -29.0, 35.5);
+
+    glVertex3f(0.0, -29.0,35.0);
+    glVertex3f(0.0, -30.0, 35.0);
+    glVertex3f(0.0, -30.0, 35.5);
+    glVertex3f(0.0, -29.0, 35.5);
+
+    glVertex3f(0.5, -29.0,35.0);
+    glVertex3f(0.5, -30.0, 35.0);
+    glVertex3f(0.5, -30.0, 35.5);
+    glVertex3f(0.5, -29.0, 35.5);
+
+    //lampu 3
+    glVertex3f(30.0, -29.0,35.0);
+    glVertex3f(30.0, -30.0, 35.0);
+    glVertex3f(30.5, -30.0, 35.0);
+    glVertex3f(30.5, -29.0, 35.0);
+
+    glVertex3f(30.0, -29.0,35.5);
+    glVertex3f(30.0, -30.0, 35.5);
+    glVertex3f(30.5, -30.0, 35.5);
+    glVertex3f(30.5, -29.0, 35.5);
+
+    glVertex3f(30.0, -29.0,35.0);
+    glVertex3f(30.0, -30.0, 35.0);
+    glVertex3f(30.0, -30.0, 35.5);
+    glVertex3f(30.0, -29.0, 35.5);
+
+    glVertex3f(30.5, -29.0,35.0);
+    glVertex3f(30.5, -30.0, 35.0);
+    glVertex3f(30.5, -30.0, 35.5);
+    glVertex3f(30.5, -29.0, 35.5);
+
+    //lampu 4
+     glVertex3f(49.5, -29.0,35.0);
+    glVertex3f(49.5, -30.0, 35.0);
+    glVertex3f(50.0, -30.0, 35.0);
+    glVertex3f(50.0, -29.0, 35.0);
+
+    glVertex3f(49.5, -29.0,35.5);
+    glVertex3f(49.5, -30.0, 35.5);
+    glVertex3f(50.0, -30.0, 35.5);
+    glVertex3f(50.0, -29.0, 35.5);
+
+    glVertex3f(49.5, -29.0,35.0);
+    glVertex3f(49.5, -30.0, 35.0);
+    glVertex3f(49.5, -30.0, 35.5);
+    glVertex3f(49.5, -29.0, 35.5);
+
+    glVertex3f(50.0, -29.0,35.0);
+    glVertex3f(50.0, -30.0, 35.0);
+    glVertex3f(50.0, -30.0, 35.5);
+    glVertex3f(50.0, -29.0, 35.5);
+    glEnd();
+
+}
+
 void tampil(void)
 {
     if (is_depth)
@@ -1595,6 +1781,7 @@ void tampil(void)
     glRotatef(yrot,0.0f,1.0f,0.0f);
     halaman();
     jembatan();
+    lampu();
     bangun1();
     heli();
     jendela1();
