@@ -979,6 +979,165 @@ void jendela2(void)
 
     glPopMatrix();
 }
+
+void jembatan (){
+     //jembatan
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex3f(-28.0, -37.0, -6.0);
+    glVertex3f(-28.0, -37.0, -11.0);
+    glVertex3f(-50.0, -37.0, -11.0);
+    glVertex3f(-50.0, -37.0, -6.0);
+
+    glVertex3f(-35.0, -37.0, -11.0);
+    glVertex3f(-35.0, -37.0, -55.0);
+    glVertex3f(-40.0, -37.0, -55.0);
+    glVertex3f(-40.0, -37.0, -11.0);
+
+    glVertex3f(-28.0, -37.0, -60.0);
+    glVertex3f(-28.0, -37.0, -55.0);
+    glVertex3f(-50.0, -37.0, -55.0);
+    glVertex3f(-50.0, -37.0, -60.0);
+
+    glVertex3f(-50.0, -37.0, -55.0);
+    glVertex3f(-50.0, -40.0, -53.0);
+    glVertex3f(-45.0, -40.0, -53.0);
+    glVertex3f(-45.0, -37.0, -55.0);
+
+    glVertex3f(-50.0, -37.0, -11.0);
+    glVertex3f(-50.0, -37.0, 35.0);
+    glVertex3f(-45.0, -37.0, 35.0);
+    glVertex3f(-45.0, -37.0, -11.0);
+
+    glVertex3f(-50.0, -37.0, 35.0);
+    glVertex3f(-50.0, -40.0, 38.0);
+    glVertex3f(-45.0, -40.0, 38.0);
+    glVertex3f(-45.0, -37.0, 35.0);
+    glEnd();
+
+    //pegangan jembatan
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-28.0, -37.0, -6.0);
+    glVertex3f(-28.0, -36.0, -6.0);
+    glVertex3f(-45.0, -36.0, -6.0);
+    glVertex3f(-45.0, -37.0, -6.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-28.0, -37.0, -11.0);
+    glVertex3f(-28.0, -36.0, -11.0);
+    glVertex3f(-35.0, -36.0, -11.0);
+    glVertex3f(-35.0, -37.0, -11.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-40.0, -37.0, -11.0);
+    glVertex3f(-40.0, -36.0, -11.0);
+    glVertex3f(-50.0, -36.0, -11.0);
+    glVertex3f(-50.0, -37.0, -11.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-35.0, -37.0, -11.0);
+    glVertex3f(-35.0, -36.0, -11.0);
+    glVertex3f(-35.0, -36.0, -55.0);
+    glVertex3f(-35.0, -37.0, -55.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-40.0, -37.0, -11.0);
+    glVertex3f(-40.0, -36.0, -11.0);
+    glVertex3f(-40.0, -36.0, -55.0);
+    glVertex3f(-40.0, -37.0, -55.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-28.0, -37.0, -55.0);
+    glVertex3f(-28.0, -36.0, -55.0);
+    glVertex3f(-35.0, -36.0, -55.0);
+    glVertex3f(-35.0, -37.0, -55.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-35.0, -37.0, -55.0);
+    glVertex3f(-35.0, -36.0, -55.0);
+    glVertex3f(-45.0, -36.0, -55.0);
+    glVertex3f(-45.0, -37.0, -55.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-28.0, -37.0, -60.0);
+    glVertex3f(-28.0, -36.0, -60.0);
+    glVertex3f(-50.0, -36.0, -60.0);
+    glVertex3f(-50.0, -37.0, -60.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-50.0, -37.0, -60.0);
+    glVertex3f(-50.0, -36.0, -60.0);
+    glVertex3f(-50.0, -36.0, -55.0);
+    glVertex3f(-50.0, -37.0, -55.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-50.0, -37.0, -55.0);
+    glVertex3f(-50.0, -36.0, -55.0);
+    glVertex3f(-50.0, -38.5, -52.0);
+    glVertex3f(-50.0, -39.9, -52.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-45.0, -37.0, -55.0);
+    glVertex3f(-45.0, -36.0, -55.0);
+    glVertex3f(-45.0, -38.5, -52.0);
+    glVertex3f(-45.0, -39.9, -52.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-50.0, -37.0, -11.0);
+    glVertex3f(-50.0, -36.0, -11.0);
+    glVertex3f(-50.0, -36.0, 35.0);
+    glVertex3f(-50.0, -37.0, 35.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-45.0, -37.0, -6.0);
+    glVertex3f(-45.0, -36.0, -6.0);
+    glVertex3f(-45.0, -36.0, 35.0);
+    glVertex3f(-45.0, -37.0, 35.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-50.0, -37.0, 35.0);
+    glVertex3f(-50.0, -36.0, 35.0);
+    glVertex3f(-50.0, -38.5, 38.0);
+    glVertex3f(-50.0, -39.9, 38.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.0, 0.0);
+    glVertex3f(-45.0, -37.0, 35.0);
+    glVertex3f(-45.0, -36.0, 35.0);
+    glVertex3f(-45.0, -38.5, 38.0);
+    glVertex3f(-45.0, -39.9, 38.0);
+    glEnd();
+
+}
+
 void tampil(void)
 {
     if (is_depth)
@@ -990,6 +1149,7 @@ void tampil(void)
     glRotatef(xrot,1.0f,0.0f,0.0f);
     glRotatef(yrot,0.0f,1.0f,0.0f);
     halaman();
+    jembatan();
     bangun1();
     heli();
     jendela1();
