@@ -1543,6 +1543,53 @@ void jendela(void)
     glEnd();
 }
 
+void jndl (void)
+{
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+    glVertex3f(18.0, -9.0,-34.5);
+    glVertex3f(18.0, 3.0, -34.5);
+    glVertex3f(20.0, 3.0,-34.5);
+    glVertex3f(20.0, -9.0, -34.5);
+    glEnd();
+}
+
+void jndla (void)
+{
+    glPushMatrix();
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+
+    glTranslated(0,14,0);
+    jndl();
+    glTranslated(4,0,0);
+    jndl();
+    glTranslated(4,0,0);
+    jndl();
+    glTranslated(4,0,0);
+    jndl();
+    glTranslated(4,0,0);
+    jndl();
+
+    glTranslated(0,15,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+    glTranslated(-4,0,0);
+    jndl();
+}
+
 void jendelasmpng1(void)
 {
 //jendela
@@ -2616,6 +2663,7 @@ void tampil(void)
     jendela3();
     bangun2();
     jendela2();
+    jndla();
     bangun3();
     dalam_gedung3();
     jendela_bangun3();
