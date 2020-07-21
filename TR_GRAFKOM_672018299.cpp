@@ -2067,7 +2067,7 @@ void bangun2(void)
 
     //depan bawah
     glBegin(GL_QUADS);
-    glColor3f(1.0,0.9,0.7);
+    glColor3f(1.0,0.6,0.6);
     glVertex3f(-1.0, -10.0, -35.0);
     glVertex3f(-1.0, -40.0, -35.0);
     glVertex3f(23.0, -40.0, -35.0);
@@ -2076,7 +2076,7 @@ void bangun2(void)
 
     //belakang bawah
     glBegin(GL_QUADS);
-    glColor3f(1.0,0.9,0.7);
+    glColor3f(1.0,0.6,0.6);
     glVertex3f(-1.0, -10.0, -70.0);
     glVertex3f(-1.0, -40.0, -70.0);
     glVertex3f(23.0, -40.0, -70.0);
@@ -2085,7 +2085,7 @@ void bangun2(void)
 
     //kiri bawah
     glBegin(GL_QUADS);
-    glColor3f(1.0,0.9,0.7);
+    glColor3f(1.0,0.6,0.6);
     glVertex3f(-1.0, -10.0,-35.0);
     glVertex3f(-1.0, -40.0, -35.0);
     glVertex3f(-1.0, -40.0, -70.0);
@@ -2094,7 +2094,7 @@ void bangun2(void)
 
     //kanan bawah
     glBegin(GL_QUADS);
-    glColor3f(1.0,0.9,0.7);
+    glColor3f(1.0,0.6,0.6);
     glVertex3f(23.0, -10.0,-35.0);
     glVertex3f(23.0, -40.0, -35.0);
     glVertex3f(23.0, -40.0, -70.0);
