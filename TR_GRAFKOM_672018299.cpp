@@ -1078,7 +1078,7 @@ void dalam_gedung3()
                     z+=0;
                     }
 
-        //eskalator
+  //eskalator
             //kiri
             glBegin(GL_POLYGON);
             glColor3f(0.5,0.5,0.5);
@@ -1148,7 +1148,6 @@ void dalam_gedung3()
             glVertex3f(-12.6, -35.1, -60.0);
             glVertex3f(-12.6, -35.7, -60.0);
             glEnd();
-
 
         //toko 1
             //depan toko 1
