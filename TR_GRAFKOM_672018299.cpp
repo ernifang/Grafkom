@@ -2067,11 +2067,11 @@ void jendelaa(void)
 {
     //jendela bangun 2
     glBegin(GL_QUADS);
-    glColor3f(1.0,0.6,0.6);
+    glColor3f(1.0,1.0,1.0);
     glVertex3f(23.0, -9.0,-38.5);
     glVertex3f(23.0, 3.0, -38.5);
-    glVertex3f(23.0, 3.0,-40.5);
-    glVertex3f(23.0, -9.0, -40.5);
+    glVertex3f(23.1, 3.0,-40.5);
+    glVertex3f(23.1, -9.0, -40.5);
     glEnd();
 }
 
@@ -2091,15 +2091,30 @@ void jendela2(void)
     glTranslated(0,0,-6.5);
     jendelaa();
 
-    glTranslated(0,20,0);
+    glTranslated(0,14,0);
     jendelaa();
-    glTranslated(0,0,6);
+    glTranslated(0,0,6.0);
     jendelaa();
     glTranslated(0,0,5.5);
     jendelaa();
-    glTranslated(0,0,5);
+    glTranslated(0,0,5.0);
     jendelaa();
-    glTranslated(0,0,4);
+    glTranslated(0,0,4.5);
+    jendelaa();
+    glTranslated(0,0,4.0);
+    jendelaa();
+
+    glTranslated(0,15,0);
+    jendelaa();
+    glTranslated(0,0,-6.0);
+    jendelaa();
+    glTranslated(0,0,-5.5);
+    jendelaa();
+    glTranslated(0,0,-5.0);
+    jendelaa();
+    glTranslated(0,0,-4.5);
+    jendelaa();
+    glTranslated(0,0,-4.0);
     jendelaa();
 
     glPopMatrix();
