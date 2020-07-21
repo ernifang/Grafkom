@@ -1589,7 +1589,66 @@ void jndla (void)
     glTranslated(-4,0,0);
     jndl();
 }
+void jendelabangun2()
+{
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+    glVertex3f(14.5, -9.0,-38.5);
+    glVertex3f(14.5, 3.0, -38.5);
+    glVertex3f(14.6, 3.0,-40.5);
+    glVertex3f(14.6, -9.0, -40.5);
+    glEnd();
+}
 
+void jendlabangun2()
+{
+    glPushMatrix();
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+
+    glTranslated(0,-14,24);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+
+    glTranslated(0,-15,24);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+    glTranslated(0,0,-4);
+    jendelabangun2();
+
+    glPopMatrix();
+}
 void jendelasmpng1(void)
 {
 //jendela
@@ -2048,12 +2107,12 @@ void bangun2(void)
     glEnd();
 
 //lantai2
-    glBegin(GL_QUADS);
+     glBegin(GL_QUADS);
     glColor3f(1.0,0.6,0.6);
-    glVertex3f(-1.0, 17.0, -70.0);
-    glVertex3f(-1.0, 17.0, -35.0);
-    glVertex3f(23.0, 17.0, -35.0);
-    glVertex3f(23.0, 17.0, -70.0);
+    glVertex3f(-1.0, -40.0, -70.0);
+    glVertex3f(-1.0, -40.0, -35.0);
+    glVertex3f(23.0, -40.0, -35.0);
+    glVertex3f(23.0, -40.0, -70.0);
     glEnd();
     //lantai atas
     glBegin(GL_QUADS);
@@ -2129,39 +2188,45 @@ void jendela2(void)
     jendelaa();
     glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-5);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-5.5);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-6.0);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-6.5);
+    glTranslated(0,0,-4);
     jendelaa();
-
-    glTranslated(0,14,0);
-    jendelaa();
-    glTranslated(0,0,6.0);
-    jendelaa();
-    glTranslated(0,0,5.5);
-    jendelaa();
-    glTranslated(0,0,5.0);
-    jendelaa();
-    glTranslated(0,0,4.5);
-    jendelaa();
-    glTranslated(0,0,4.0);
+    glTranslated(0,0,-4);
     jendelaa();
 
-    glTranslated(0,15,0);
+    glTranslated(0,14,24);
     jendelaa();
-    glTranslated(0,0,-6.0);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-5.5);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-5.0);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-4.5);
+    glTranslated(0,0,-4);
     jendelaa();
-    glTranslated(0,0,-4.0);
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+
+    glTranslated(0,15,24);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
+    jendelaa();
+    glTranslated(0,0,-4);
     jendelaa();
 
     glPopMatrix();
@@ -2643,7 +2708,54 @@ void jendela_bangun3(){
     glEnd();
 
 }
+void jendela_blkg(void)
+{
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+    glVertex3f(18.0, -9.0,-70.5);
+    glVertex3f(18.0, 3.0, -70.5);
+    glVertex3f(20.0, 3.0,-70.5);
+    glVertex3f(20.0, -9.0, -70.5);
+    glEnd();
+}
 
+void jndl_blkg()
+{
+    glPushMatrix();
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+
+    glTranslated(0,14,0);
+    jendela_blkg();
+    glTranslated(4,0,0);
+    jendela_blkg();
+    glTranslated(4,0,0);
+    jendela_blkg();
+    glTranslated(4,0,0);
+    jendela_blkg();
+    glTranslated(4,0,0);
+    jendela_blkg();
+
+    glTranslated(0,14,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+    glTranslated(-4,0,0);
+    jendela_blkg();
+
+
+}
 void tampil(void)
 {
     if (is_depth)
@@ -2667,11 +2779,15 @@ void tampil(void)
     bangun3();
     dalam_gedung3();
     jendela_bangun3();
+    jndl_blkg();
+    jendlabangun2();
     glPushMatrix();
     glPopMatrix();
 
     glutSwapBuffers();
 }
+
+
 
 void keyboard(unsigned char key, int x, int y)
 {
