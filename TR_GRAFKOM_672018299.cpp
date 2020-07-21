@@ -1588,15 +1588,18 @@ void jndla (void)
     jndl();
     glTranslated(-4,0,0);
     jndl();
+
+    glPopMatrix();
+    glEnd();
 }
 void jendelabangun2()
 {
     glBegin(GL_QUADS);
     glColor3f(1.0,1.0,1.0);
-    glVertex3f(14.5, -9.0,-38.5);
-    glVertex3f(14.5, 3.0, -38.5);
-    glVertex3f(14.6, 3.0,-40.5);
-    glVertex3f(14.6, -9.0, -40.5);
+    glVertex3f(-1.5, -9.0,-38.5);
+    glVertex3f(-1.5, 3.0, -38.5);
+    glVertex3f(-1.6, 3.0,-40.5);
+    glVertex3f(-1.6, -9.0, -40.5);
     glEnd();
 }
 
@@ -1617,7 +1620,7 @@ void jendlabangun2()
     glTranslated(0,0,-4);
     jendelabangun2();
 
-    glTranslated(0,-14,24);
+    glTranslated(0,14,24);
     jendelabangun2();
     glTranslated(0,0,-4);
     jendelabangun2();
@@ -1632,7 +1635,7 @@ void jendlabangun2()
     glTranslated(0,0,-4);
     jendelabangun2();
 
-    glTranslated(0,-15,24);
+    glTranslated(0,15,24);
     jendelabangun2();
     glTranslated(0,0,-4);
     jendelabangun2();
@@ -1648,6 +1651,7 @@ void jendlabangun2()
     jendelabangun2();
 
     glPopMatrix();
+    glEnd();
 }
 void jendelasmpng1(void)
 {
@@ -2168,6 +2172,107 @@ void bangun2(void)
     glVertex3f(23.0, 45.0, -60.0);
     glEnd();
 
+}
+void lampumerah(void)
+{
+    //tiang
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.5,0.0);
+    glVertex3f(-40.0, -40.0,10.0);
+    glVertex3f(-40.0, -40.0, 8.0);
+    glVertex3f(-40.0, -20.0,8.0);
+    glVertex3f(-40.0, -20.0, 10.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.5,0.0);
+    glVertex3f(-40.0, -20.0,8.0);
+    glVertex3f(-40.0, -40.0, 8.0);
+    glVertex3f(-38.0, -40.0,8.0);
+    glVertex3f(-38.0, -20.0, 8.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.5,0.0);
+    glVertex3f(-38.0, -40.0,10.0);
+    glVertex3f(-38.0, -40.0, 8.0);
+    glVertex3f(-38.0, -20.0,8.0);
+    glVertex3f(-38.0, -20.0, 10.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.5,0.0);
+    glVertex3f(-40.0, -20.0,10.0);
+    glVertex3f(-40.0, -40.0, 10.0);
+    glVertex3f(-38.0, -40.0,10.0);
+    glVertex3f(-38.0, -20.0, 10.0);
+    glEnd();
+
+    //temoat lampu
+    glBegin(GL_QUADS);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-42.0, -15.0,12.0);
+    glVertex3f(-42.0, -30.0, 12.0);
+    glVertex3f(-42.0, -30.0,6.0);
+    glVertex3f(-42.0, -15.0, 6.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-36.0, -15.0,12.0);
+    glVertex3f(-36.0, -30.0, 12.0);
+    glVertex3f(-36.0, -30.0,6.0);
+    glVertex3f(-36.0, -15.0, 6.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-42.0, -15.0,12.0);
+    glVertex3f(-42.0, -30.0, 12.0);
+    glVertex3f(-36.0, -30.0,12.0);
+    glVertex3f(-36.0, -15.0, 12.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-42.0, -15.0,6.0);
+    glVertex3f(-42.0, -30.0, 6.0);
+    glVertex3f(-36.0, -30.0,6.0);
+    glVertex3f(-36.0, -15.0, 6.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(-42.0, -15.0,12.0);
+    glVertex3f(-42.0, -15.0, 6.0);
+    glVertex3f(-36.0, -15.0,6.0);
+    glVertex3f(-36.0, -15.0, 12.0);
+    glEnd();
+
+    //merah
+    glBegin(GL_QUADS);
+    glColor3f(1.0,0.0,0.0);
+    glVertex3f(-40.1, -18.0,12.2);
+    glVertex3f(-40.1, -20.0, 12.2);
+    glVertex3f(-38.1, -20.0,12.2);
+    glVertex3f(-38.1, -18.0, 12.2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,0.0);
+    glVertex3f(-40.1, -22.0,12.2);
+    glVertex3f(-40.1, -24.0, 12.2);
+    glVertex3f(-38.1, -24.0,12.2);
+    glVertex3f(-38.1, -22.0, 12.2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0,1.0,0.0);
+    glVertex3f(-40.1, -26.0,12.2);
+    glVertex3f(-40.1, -28.0, 12.2);
+    glVertex3f(-38.1, -28.0,12.2);
+    glVertex3f(-38.1, -26.0, 12.2);
+    glEnd();
 }
 void jendelaa(void)
 {
@@ -2754,7 +2859,8 @@ void jndl_blkg()
     glTranslated(-4,0,0);
     jendela_blkg();
 
-
+    glPopMatrix();
+    glEnd();
 }
 void tampil(void)
 {
@@ -2767,6 +2873,7 @@ void tampil(void)
     glRotatef(xrot,1.0f,0.0f,0.0f);
     glRotatef(yrot,0.0f,1.0f,0.0f);
     halaman();
+    lampumerah();
     jembatan();
     lampu();
     bangun1();
@@ -2886,7 +2993,7 @@ void ukuran(int lebar,int tinggi)
     if(tinggi==0) tinggi=1;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(50.0,lebar / tinggi, 5.0,500.0);
+    gluPerspective(80.0,lebar / tinggi, 5.0,500.0);
     glTranslated(0.0,-5.0,-150.0);
     glMatrixMode(GL_MODELVIEW);
 }
