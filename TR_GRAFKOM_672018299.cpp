@@ -16,7 +16,7 @@ float xrot = 0.0f;
 float yrot = 0.0f;
 float xdiff = 0.0f;
 float ydiff = 0.0f;
-double opintu=0;
+static int year1=0, day1=0, year2=0, day2=0;
 bool mouseDown =false;
 
 int is_depth;
