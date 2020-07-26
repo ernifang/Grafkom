@@ -6,52 +6,22 @@
 #include<iostream>
 #define M_PHI 3.14
 
+
+float xrot = 0.0;
+float yrot = 0.0;
+float xdiff = 0.0;
+float ydiff = 0.0;
+bool mouseDown = false;
+int is_depth;
+int z = 0;
+int y =0;
+int a =0;
 void init(void);
 void tampil(void);
-void keyboard(unsigned char,int,int);
-void ukuran(int,int);
-void mouse(int button,int state,int x,int y);
-void mouseMotion(int x,int y);
-float xrot = 0.0f;
-float yrot = 0.0f;
-float xdiff = 0.0f;
-float ydiff = 0.0f;
-static int year1=0, day1=0, year2=0, day2=0;
-bool mouseDown =false;
+void keyboard(unsigned char, int, int);
+void ukuran (int, int);
 
-int is_depth;
-
-int main (int argc, char **argv)
-{
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(1200,1100);
-    glutInitWindowPosition(100, 100);
-    glutCreateWindow("TR_GRAFKOM - 672108299");
-    init();
-    glutDisplayFunc(tampil);
-    glutKeyboardFunc(keyboard);
-    glutReshapeFunc(ukuran);
-    glutMouseFunc(mouse);
-    glutMotionFunc(mouseMotion);
-    glutMainLoop();
-    return 0;
-}
-
-void init(void)
-{
-    glClearColor(0.0,0.5,1.0,1.0);
-    glMatrixMode(GL_PROJECTION);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_DEPTH_TEST);
-    is_depth=1;
-    glMatrixMode(GL_MODELVIEW);
-    glViewport(0,0,1200,1000);
-    glPointSize(9.0);
-    glLineWidth(6.0f);
-}
+float angle = 0.0f;
 
 void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
                float LEBAR_X, float LEBAR_Y, float JUMLAH_SUDUT, float ROTASI)
@@ -68,9 +38,6 @@ void lingkaran (float TITIK_LAYAR_X,float TITIK_LAYAR_Y,
 }
 
 void halaman(){
-     //bulan
-    glColor3f(1.0,0.9,0.5);
-    lingkaran(-50, 50, 5, 5, 500, 20);
 
 //alas1
     glBegin(GL_QUADS);
@@ -2861,16 +2828,27 @@ void jndl_blkg()
     glPopMatrix();
     glEnd();
 }
+
+void bulan(void)
+{
+    glColor3f(1.0f,1.0f, 0.0f);
+    glPushMatrix();
+    glRotatef(y-=100.0f,0.0f,0.0f,1.0f);
+         glTranslated(-50.0,70.0,0.0);
+        glutSolidSphere(10, 20, 20);
+    angle+=0.1f;
+    glPopMatrix();
+    glEnd();
+}
+
 void tampil(void)
 {
-    if (is_depth)
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    else
-    glClear(GL_COLOR_BUFFER_BIT);
-     glLoadIdentity();
-    gluLookAt(0.0f,0.0f,3.0f,0.0f,0.0f,0.0f,0.0f,1.0f,0.0f);
-    glRotatef(xrot,1.0f,0.0f,0.0f);
-    glRotatef(yrot,0.0f,1.0f,0.0f);
+glPushMatrix();
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear color and depth buffers
+    glColor3f(0.2f,0.f,0.8f);
+    gluLookAt(0.0, 0.0, 50.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	glRotatef(xrot,1,0,0);
+	glRotatef(yrot,0,1,0);
     halaman();
     lampumerah();
     jembatan();
@@ -2887,57 +2865,56 @@ void tampil(void)
     jendela_bangun3();
     jndl_blkg();
     jendlabangun2();
-    glPushMatrix();
+    bulan();
     glPopMatrix();
-
     glutSwapBuffers();
 }
 
-
-
-void keyboard(unsigned char key, int x, int y)
+void timer(int z)
 {
+    glutPostRedisplay();
+    glutTimerFunc(1500,timer,0);
+}
+
+void keyboard (unsigned char key, int x, int y){
     switch (key)
     {
-    case 'w':
-    case 'W':
-        glTranslatef(0.0, 0.0, 3.0);
-        break;
-    case 'd':
-    case 'D':
-        glTranslatef(3.0, 0.0, 0.0);
-        break;
-    case 's':
-    case 'S':
-        glTranslatef(0.0,0.0, -3.0);
-        break;
+     case 'w':
+   case 'W':
+    glTranslatef(0.0,0.0,3.0);
+    break;
+   case 'd':
+   case 'D':
+    glTranslatef(3.0,0.0,0.0);
+    break;
+   case 's':
+   case 'S':
+    glTranslatef(0.0,0.0,-3.0);
+    break;
     case 'a':
     case 'A':
-        glTranslatef(-3.0, 0.0, 0.0);
-        break;
+    glTranslatef(-3.0,0.0,0.0);
+    break;
     case '7':
-        glTranslatef(0.0, 3.0, 0.0);
+        glTranslatef(0.0,3.0,0.0);
         break;
     case '9':
-        glTranslatef(0.0, -3.0, 0.0);
-        break;
+        glTranslatef(0.0,-3.0,0.0);
     case '2':
-        glRotatef(2.0, 1.0, 0.0, 0.0);
+        glRotatef(2.0,1.0,0.0,0.0);
         break;
     case '8':
-        glRotatef(-2.0, 1.0, 0.0, 0.0);
-        break;
+        glRotatef(-2.0,1.0,0.0,0.0);
     case '6':
-        glRotatef(2.0, 0.0, 1.0, 0.0);
+        glRotatef(2.0,0.0,1.0,0.0);
         break;
     case '4':
-        glRotatef(-2.0, 0.0, 1.0, 0.0);
-        break;
+        glRotatef(-2.0,0.0,1.0,0.0);
     case '1':
-        glRotatef(2.0, 0.0, 0.0, 1.0);
+        glRotatef(2.0,0.0,0.0,1.0);
         break;
     case '3':
-        glRotatef(-2.0, 0.0, 0.0, 1.0);
+        glRotatef(-2.0,0.0,0.0,1.0);
         break;
     case '5':
         if (is_depth)
@@ -2950,20 +2927,9 @@ void keyboard(unsigned char key, int x, int y)
             is_depth = 1;
             glEnable(GL_DEPTH_TEST);
         }
-    }
-    tampil();
+   }
+   tampil();
 }
-
-void idle()
-{
-  if (!mouseDown)
-  {
-      xrot +=0.3f;
-      yrot +=0.4f;
-  }
-   glutPostRedisplay();
-}
-
 void mouse(int button,int state,int x,int y)
 {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
@@ -2985,6 +2951,47 @@ void mouseMotion(int x,int y)
 
         glutPostRedisplay();
     }
+}
+
+void idle()
+{
+  if (!mouseDown)
+  {
+      xrot +=0.3f;
+      yrot +=0.4f;
+  }
+   glutPostRedisplay();
+}
+
+int main(int argc, char **argv){
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB);
+    glutInitWindowSize(800,600);
+    glutInitWindowPosition(250,80);
+    glutCreateWindow("TR_GRAFKOM - 672108299");
+    init();
+    glutDisplayFunc(tampil);
+    glutKeyboardFunc(keyboard);
+    glutReshapeFunc(ukuran);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
+     glutTimerFunc(1500,timer,0);
+    glutMainLoop();
+    return 0;
+}
+void init(void){
+    glClearColor(0.0,0.5,1.0,1.0);
+    glMatrixMode(GL_PROJECTION);
+    //glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+    //glEnable(GL_LIGHT0);
+    //glEnable(GL_LIGHT1);
+    glEnable(GL_DEPTH_TEST);
+    is_depth=1;
+    glMatrixMode(GL_MODELVIEW);
+    glViewport(0,-150,800,800);
+    glPointSize(9.0);
+    glLineWidth(6.0f);
 }
 
 void ukuran(int lebar,int tinggi)
